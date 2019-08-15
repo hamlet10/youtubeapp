@@ -28,9 +28,9 @@ export class HomeComponent implements OnInit {
   }
 
   cargarVideos() {
-    this.yts.getVideos().subscribe(rest => {
-      this.videos = rest;
-    });
+    this.yts
+      .getVideos()
+      .subscribe(rest => this.videos.push.apply(this.videos, rest));
   }
   ngOnInit() {}
 }
